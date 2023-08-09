@@ -1,17 +1,3 @@
-library(shiny)
-library(shinydashboard)
-library(dplyr)
-library(readxl)
-library(shinyWidgets)
-library(sf)
-library(shinyjs)
-library(dashboardthemes)
-library(scales)
-library(tidyverse)
-library(RColorBrewer)
-library(corrplot)
-
-
 #créer votre propre thème
 customTheme <- shinyDashboardThemeDIY(
   
