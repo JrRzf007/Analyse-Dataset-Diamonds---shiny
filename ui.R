@@ -156,7 +156,7 @@ ui <- dashboardPage(skin="blue",
                       theme = "blue_gradient",
                       boldText = "Analyse BD Diamonds"
                     ),
-                    tags$li(a(href = 'https://www.statology.org/diamonds-dataset-r/',
+                    tags$li(a(href = 'https://github.com/JrRzf007/Analyse-Dataset-Diamonds---shiny/blob/main/lisez%20moi.pdf',
                               icon("fas fa-book-reader"),
                               title = "Guide"),
                             class = "dropdown"),
