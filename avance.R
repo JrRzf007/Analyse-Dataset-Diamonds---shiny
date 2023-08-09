@@ -1,3 +1,5 @@
+# Librairie utilisées pour l'application
+
 library(tidyverse)
 library(ggplot2)
 library(scales)
@@ -5,6 +7,18 @@ library(RColorBrewer)
 library(corrplot)
 library(xgboost)
 library(randomForest)
+library(shiny)
+library(shinydashboard)
+library(readxl)
+library(shinyWidgets)
+library(sf)
+library(shinyjs)
+library(dashboardthemes)
+library(scales)
+library(openxlsx)
+library(writexl)
+library(FactoMineR)
+library(factoextra)
 
 
 generate_plot <- function(data, choice) {
