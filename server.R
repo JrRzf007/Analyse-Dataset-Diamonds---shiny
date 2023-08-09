@@ -14,7 +14,7 @@ library(factoextra)
 
 server <- function(input, output) {
   # Lire le fichier Excel lorsqu'un fichier est chargé
-  data <- reactive({
+  BD <- reactive({
     req(input$file)
     infile <- input$file
     if (is.null(infile)) {
@@ -134,7 +134,7 @@ server <- function(input, output) {
     y_actual <- diamonds$price
     x_features <- diamonds[, c("carat", "table", "x", "y")]
     
-    # Convertir les données en matrices
+    # randomForest ne prends en paramètres que des vecteur,matrices,..
     X <- as.matrix(x_features)
     y <- as.vector(y_actual)
     
@@ -162,7 +162,7 @@ server <- function(input, output) {
   output$dh <- renderDataTable({
     selected_method <- input$tpred
     if (!is.null(selected_method)) {
-      predictions <- mt_ch(data(), selected_method)
+      predictions <- mt_ch(BD(), selected_method)
       predictions
     }
   })
@@ -175,7 +175,7 @@ server <- function(input, output) {
     content = function(file) {
       selected_method <- input$tpred
       if (!is.null(selected_method)) {
-        predictions <- mt_ch(data(), selected_method)
+        predictions <- mt_ch(BD(), selected_method)
         write.xlsx(predictions, file, row.names = FALSE)
       }
     }
