@@ -1,17 +1,4 @@
-library(dplyr)
-library(ggplot2)
-library(readxl)
-library(scales)
-library(RColorBrewer)
-library(corrplot)
-library(randomForest)
-library(xgboost)
-library(openxlsx)
-library(writexl)
-library(FactoMineR)
-library(factoextra)
-
-
+#serveur
 server <- function(input, output) {
   # Lire le fichier Excel lorsqu'un fichier est chargé
   BD <- reactive({
@@ -88,7 +75,7 @@ server <- function(input, output) {
     
     ggplot(data, aes(x = y_pred, y = y_price, color = clarity)) +
       geom_point() +
-      labs(x = "Prix réelles", y = "Prix predits",title = "Comparaison prédictions et réalité selon la clarté") +
+      labs(x = "Prix prédits", y = "Prix réels",title = "Comparaison prédictions et réalité selon la clarté") +
       theme_minimal()
   })
   
@@ -120,7 +107,7 @@ server <- function(input, output) {
     
     ggplot(data, aes(x = y_pred_xgboost, y = y_price, color = clarity)) +
       geom_point() +
-      labs(x = "Prix réels", y = "Prix predits", title = "Comparaison prédictions et réalité selon la clarté") +
+      labs(x = "Prix prédits", y = "Prix réels", title = "Comparaison prédictions et réalité selon la clarté") +
       theme_minimal()
   })
   
@@ -154,7 +141,7 @@ server <- function(input, output) {
     
     ggplot(data, aes(x = y_pred_rf, y = y_price, color = clarity)) +
       geom_point() +
-      labs(x = "Prix réels", y = "Prix predits", title = "Comparaison prédictions et réalité selon la clarté") +
+      labs(x = "Prix prédits", y = "Prix réels", title = "Comparaison prédictions et réalité selon la clarté") +
       theme_minimal()
   })
   
@@ -222,7 +209,7 @@ server <- function(input, output) {
   
   #resultat
   output$cf <- renderTable({
-    diamonds_cust <- diamonds %>% 
+    diamonds_cust <- diamonds %>% https://github.com/JrRzf007/Analyse-Dataset-Diamonds---shiny/blob/main/server.R
       mutate(color = as.integer(color), cut = as.integer(cut), clarity = as.integer(clarity))
     set.seed(220015)
     intrain <- sample(nrow(diamonds_cust), nrow(diamonds_cust)*0.004)
