@@ -203,7 +203,7 @@ ui <- dashboardPage(skin="blue",
                                                     h4(p(HTML("</br>Le poids est exprimé en carats, 1 carat = 0.2 grammes. 
                                                               Les diamants de grande envergure sont de plus en plus rare ce qui font que leurs valeurs
                                                               soient plus élevées que ceux de petites tailles.</br>
-                                                              </br>Mais pour estimre le prix d'un diamant il n'y a pas que sa taille qui compte ; cela est
+                                                              </br>Mais pour estimer le prix d'un diamant il n'y a pas que sa taille qui compte ; cela est
                                                               mis en évidence dans cette base de données où les diamants même de petites tailles ont une
                                                               grande valeur. Ceci est dû à la rareté de la couleur ou d'autres caractéristiques.</br>"))),
                                                     div(
