@@ -209,7 +209,7 @@ server <- function(input, output) {
   
   #resultat
   output$cf <- renderTable({
-    diamonds_cust <- diamonds %>% https://github.com/JrRzf007/Analyse-Dataset-Diamonds---shiny/blob/main/server.R
+    diamonds_cust <- diamonds %>% 
       mutate(color = as.integer(color), cut = as.integer(cut), clarity = as.integer(clarity))
     set.seed(220015)
     intrain <- sample(nrow(diamonds_cust), nrow(diamonds_cust)*0.004)
